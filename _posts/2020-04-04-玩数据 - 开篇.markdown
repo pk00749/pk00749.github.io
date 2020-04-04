@@ -4,7 +4,6 @@ title: 玩数据 - 开篇
 date: 2020-04-04 15:31:00.000000000 +09:00
 ---
 
-# 开篇
 
 >“*Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it...*"
 
@@ -27,31 +26,31 @@ date: 2020-04-04 15:31:00.000000000 +09:00
 **我不是大神，但会自爆踩过的坑**
 **我有个三年的华为云，只要你写好，我就帮你跑，免费不差钱**
 
-**二维码**
+**结个伴**
 ![avatar](/assets/pictures/mmqrcode1585986911917.png)
 
 
-#### 预备
+### 预备
 基建，如开发环境配置，编辑器...
-[玩数据 - 预备]([http://example.com/ "With a Title"](https://pk00749.github.io/2020/04/%E7%8E%A9%E6%95%B0%E6%8D%AE-%E9%A2%84%E5%A4%87/)). 
+[玩数据 - 预备](https://pk00749.github.io/2020/04/%E7%8E%A9%E6%95%B0%E6%8D%AE-%E9%A2%84%E5%A4%87/). 
 
 
 
-#### 小试牛刀
+### 小试牛刀
 Python入门，分享文章  
 至于统计学和概率学，我直接分享笔记吧，我数学白痴  
 [玩数据 - 小试牛刀](
 https://pk00749.github.io/2020/04/%E7%8E%A9%E6%95%B0%E6%8D%AE-%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80/)
 
 
-#### 中流击水
+### 中流击水
 兴趣指导一切，介绍两个Kaggle上的初级分析项目  
 [玩数据 - 小试牛刀](2020-04-04-玩数据%20-%20小试牛刀.markdown) 
 
 
 
 
-#### 大胆深入
+### 大胆深入
 说多无谓，撸袖开干
 介绍我曾经自己玩过的项目，失败的经验  
 都在个人Github上  
