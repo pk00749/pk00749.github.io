@@ -1,0 +1,26 @@
+---
+layout: post
+title: 玩数据 - 开篇
+date: 2020-04-04 15:32:24.000000000 +09:00
+---
+
+# 预备
+
+## 环境配置
+推荐使用`Python 3.7`以上。3.8都来了，你还用3.6？  
+
+我只有`Windows`，所以推荐Anaconda。一键无脑配置
+
+如果`Linux`，尽管`Python2`就快停止支持，但还是先搭配`virtualenv`
+
+至于苹果，我没玩过。
+
+以后都可以百度解决。
+
+
+## 编辑器IDE
+例如爬虫，开发小工具，开发GUI，`VS Code`和`Pycharm`都可以，`VS Code`是轻量级，`Pycharm`偏重量级。
+
+如果是数据清洗，分析，可视化等能立马显示结果的，墙裂推荐`Jypter notebook`。
+`Anaconda`是自带的。编辑`Jypter notebook`的方法特多。最新的`VS Code`是默认支持的。
+`Pycharm`的话需要配置一下。
