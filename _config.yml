@@ -1,11 +1,12 @@
 # Basic
 title: 我魔兽
 subtitle: York Li
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
+# welcome_message: <a target="_blank">Download the theme</a>
+# welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
 description: It's time to SHOW ME
-creator: <a href="http://onev.cat">@yorkli</a>
+# creator: <a href="http://onev.cat">@yorkli</a>
 
-url: "http://vno.onevcat.com"
+# url: "http://vno.onevcat.com"
 
 permalink: /:year/:month/:title/
 
@@ -38,9 +39,9 @@ comment:
     
 # Social
 social:
-    weibo: onevcat
+    # weibo: onevcat
     github: pk00749
-    zhihu: onevcat
+    linkedin: york.h.x.li
     gplus: 107108267983477358170
     mail: york.h.x.li@hotmail.com
 
