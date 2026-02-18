@@ -63,12 +63,32 @@ def get_stock_notice_by_code(stock_code: str, days_back: int = 30) -> dict:
     return result
 
 
+def get_notices_by_date(date: str) -> dict:
+    """获取指定日期的公告"""
+    try:
+        df = ak.stock_notice_report(symbol="全部", date=date)
+        if df is None or len(df) == 0:
+            return {"error": f"{date} 无公告数据"}
+        if '代码' not in df.columns:
+            return {"error": f"API 返回异常"}
+    except Exception as e:
+        return {"error": f"获取失败: {e}"}
+    
+    return {
+        "date": date,
+        "count": len(df),
+        "stocks": df[['代码', '名称']].drop_duplicates().to_dict('records')
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description='股票公告查询')
     parser.add_argument('--code', '-c', type=str, default=None,
                         help='股票代码，如 600499')
+    parser.add_argument('--date', type=str, default=None,
+                        help='指定日期，如 20260214')
     parser.add_argument('--days', '-d', type=int, default=30,
-                        help='查询天数，默认30天')
+                        help='查询天数（配合 --code 使用），默认30天')
     
     args = parser.parse_args()
     
@@ -86,6 +106,19 @@ def main():
             print(f"• [{n['公告类型']}] {n['公告标题'][:50]}...")
             print(f"  日期: {n['公告日期']} | 链接: {n['网址']}")
             print()
+    elif args.date:
+        # 指定日期查询
+        result = get_notices_by_date(args.date)
+        if "error" in result:
+            print(result["error"])
+            return
+        
+        print(f"📊 {result['date']} 有公告的股票")
+        print(f"共 {result['count']} 条公告，{len(result['stocks'])} 只股票\n")
+        
+        stocks = sorted(result['stocks'], key=lambda x: str(x['代码']))
+        for s in stocks:
+            print(f"{s['代码']:>6}  {s['名称']}")
     else:
         # 获取最近有公告的股票
         result = get_recent_notices()
