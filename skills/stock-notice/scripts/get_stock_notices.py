@@ -1,84 +1,104 @@
 #!/usr/bin/env python3
 """
-获取当天有公告更新的股票代号和名称
-使用 akshare 的 stock_notice_report API
+获取股票公告
+- 默认获取当天/最近有公告的股票列表
+- 支持指定股票代码查询最近公告
 """
 
 import akshare as ak
 from datetime import datetime, timedelta
+import json
 import argparse
 
+def get_recent_notices(days_back: int = 5) -> dict:
+    """获取最近几天有公告的股票"""
+    today = datetime.now().strftime('%Y%m%d')
+    
+    # 尝试获取最近几天直到有数据
+    for i in range(days_back + 1):
+        check_date = (datetime.now() - timedelta(days=i)).strftime('%Y%m%d')
+        try:
+            df = ak.stock_notice_report(symbol="全部", date=check_date)
+            if df is not None and len(df) > 0 and '代码' in df.columns:
+                return {
+                    "date": check_date,
+                    "count": len(df),
+                    "stocks": df[['代码', '名称']].drop_duplicates().to_dict('records')
+                }
+        except:
+            continue
+    
+    return {"error": "无法获取公告数据"}
 
-def get_stock_notices(date: str = None, symbol: str = "全部") -> list:
-    """
-    获取指定日期的股票公告
+
+def get_stock_notice_by_code(stock_code: str, days_back: int = 30) -> dict:
+    """获取指定股票代码的最近公告"""
+    stock_code = stock_code.strip().upper()
     
-    Args:
-        date: 日期，格式 YYYYMMDD，默认为今天
-        symbol: 公告类型，默认为全部
+    # 最近几天有公告的股票
+    result = {
+        "code": stock_code,
+        "notices": [],
+        "error": None
+    }
     
-    Returns:
-        股票列表 [(代码, 名称), ...]
-    """
-    # 如果没有指定日期，默认获取今天
-    if date is None:
-        date = datetime.now().strftime('%Y%m%d')
+    # 尝试获取最近几天的数据
+    for i in range(days_back):
+        check_date = (datetime.now() - timedelta(days=i)).strftime('%Y%m%d')
+        try:
+            df = ak.stock_notice_report(symbol="全部", date=check_date)
+            if df is not None and len(df) > 0 and '代码' in df.columns:
+                # 筛选指定股票
+                stock_df = df[df['代码'].astype(str).str.contains(stock_code.lstrip('0'))]
+                if len(stock_df) > 0:
+                    result["date"] = check_date
+                    result["notices"] = stock_df.to_dict('records')
+                    break
+        except Exception as e:
+            continue
     
-    # 尝试获取数据，如果失败则回退到昨天
-    try:
-        df = ak.stock_notice_report(symbol=symbol, date=date)
-        if df is None or len(df) == 0:
-            raise ValueError("No data")
-    except:
-        # 回退到昨天
-        yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
-        print(f"当天无数据，回退到昨天: {yesterday}")
-        date = yesterday
-        df = ak.stock_notice_report(symbol=symbol, date=date)
+    if not result["notices"]:
+        result["error"] = f"未找到 {stock_code} 的公告（最近{days_back}天）"
     
-    if df is None or len(df) == 0:
-        return []
-    
-    # 提取股票代码和名称，去重
-    stocks = df[['代码', '名称']].drop_duplicates()
-    stocks = stocks.sort_values('代码')
-    
-    return stocks.values.tolist()
+    return result
 
 
 def main():
-    parser = argparse.ArgumentParser(description='获取当天有公告更新的股票')
-    parser.add_argument('--date', '-d', type=str, default=None, 
-                        help='日期，格式 YYYYMMDD，默认为今天')
-    parser.add_argument('--symbol', '-s', type=str, default='全部',
-                        choices=['全部', '重大事项', '财务报告', '融资公告', '风险提示', '资产重组', '信息变更', '持股变动'],
-                        help='公告类型')
-    parser.add_argument('--output', '-o', type=str, default=None,
-                        help='输出文件路径')
+    parser = argparse.ArgumentParser(description='股票公告查询')
+    parser.add_argument('--code', '-c', type=str, default=None,
+                        help='股票代码，如 600499')
+    parser.add_argument('--days', '-d', type=int, default=30,
+                        help='查询天数，默认30天')
     
     args = parser.parse_args()
     
-    print(f"正在获取公告数据...")
-    stocks = get_stock_notices(date=args.date, symbol=args.symbol)
-    
-    print(f"\n共有 {len(stocks)} 只股票有公告更新:\n")
-    print(f"{'代码':<10} {'名称':<15}")
-    print("-" * 25)
-    
-    for code, name in stocks:
-        print(f"{code:<10} {name:<15}")
-    
-    # 如果指定了输出文件，保存到文件
-    if args.output:
-        with open(args.output, 'w', encoding='utf-8') as f:
-            f.write(f"日期: {args.date or datetime.now().strftime('%Y%m%d')}\n")
-            f.write(f"公告类型: {args.symbol}\n")
-            f.write(f"股票数量: {len(stocks)}\n\n")
-            f.write(f"{'代码':<10} {'名称':<15}\n")
-            f.write("-" * 25 + "\n")
-            for code, name in stocks:
-                f.write(f"{code:<10} {name:<15}\n")
-        print(f"\n已保存到: {args.output}")
+    if args.code:
+        # 查询指定股票
+        result = get_stock_notice_by_code(args.code, args.days)
+        if result["error"]:
+            print(result["error"])
+            return
+        
+        print(f"📌 {result['code']} 公告（{result.get('date', 'N/A')}）")
+        print(f"共 {len(result['notices'])} 条\n")
+        
+        for n in result["notices"]:
+            print(f"• [{n['公告类型']}] {n['公告标题'][:50]}...")
+            print(f"  日期: {n['公告日期']} | 链接: {n['网址']}")
+            print()
+    else:
+        # 获取最近有公告的股票
+        result = get_recent_notices()
+        if "error" in result:
+            print(result["error"])
+            return
+        
+        print(f"📊 {result['date']} 有公告的股票")
+        print(f"共 {result['count']} 条公告，{len(result['stocks'])} 只股票\n")
+        
+        stocks = sorted(result['stocks'], key=lambda x: str(x['代码']))
+        for s in stocks:
+            print(f"{s['代码']:>6}  {s['名称']}")
 
 
 if __name__ == "__main__":

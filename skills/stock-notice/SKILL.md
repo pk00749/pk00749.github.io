@@ -12,16 +12,16 @@ description: 获取A股当天有公告更新的股票列表。使用 akshare 的
 ## 使用方法
 
 ```bash
-python3 scripts/get_stock_notice.py [选项]
+python3 scripts/get_stock_notices.py [选项]
 ```
 
 ### 选项
 
 | 参数 | 简写 | 说明 | 默认值 |
 |------|------|------|--------|
-| `--date` | `-d` | 日期 (YYYYMMDD) | 今天 |
-| `--symbol` | `-s` | 公告类型 | 全部 |
-| `--output` | `-o` | 输出到文件 | - |
+| `--code` | `-c` | 股票代码，查询指定股票 | - |
+| `--days` | `-d` | 查询天数（配合 --code 使用） | 30 |
+| (无参数) | | 获取最近有公告的股票列表 | - |
 
 ### 公告类型 (symbol)
 
