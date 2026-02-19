@@ -35,8 +35,8 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: York H X Li
-  email: york.h.x.li@hotmail.com # change to your email address
-  fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
+  email: pk00749@163.com # change to your email address
+  fediverse_handle: "pk00749@163.com"# fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username # change to your Twitter homepage
@@ -89,7 +89,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: light # [light | dark]
+theme_mode: "light" # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
