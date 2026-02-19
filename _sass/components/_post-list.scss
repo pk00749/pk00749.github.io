@@ -1,6 +1,7 @@
 // ------------------------------
 // POST LIST
 // ------------------------------
+@use "sass:color" as *;
 
 .post-list {
   margin: 0;
@@ -44,12 +45,12 @@
     display: block;
     margin: .7em 0 0 0;
     font-size: .9em;
-    color: darken($gray, 2%);
+    color: color.adjust($gray, $lightness: -2%);
   }
 
     .post-list__meta--date {
       margin-right: .5em;
-      color: darken($gray, 2%);
+      color: color.adjust($gray, $lightness: -2%);
     }
 
     .post-list__meta--tags {

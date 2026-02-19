@@ -1,6 +1,7 @@
 // ------------------------------
 // SINGLE POST LAYOUT
 // ------------------------------
+@use "sass:color" as *;
 
 .post-comments {
   border-top: 1px solid $gray-light;
@@ -13,7 +14,7 @@
 
 .post-meta {
   margin: 0 0 .4em 0;
-  color: darken($gray, 2%);
+  color: color.adjust($gray, $lightness: -2%);
 }
 
   .post-meta__date {
