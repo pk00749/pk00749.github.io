@@ -3,6 +3,7 @@
 // ------------------------------
 @use "sass:color" as color;
 @use "variables" as *;
+@use "grid" as *;
 
 html, body {
   height: 100%;
