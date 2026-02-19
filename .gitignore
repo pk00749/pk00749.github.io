@@ -1,18 +1,27 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
 
-# Created by https://www.gitignore.io/api/jekyll,osx
-
-### Jekyll ###
-_site/
-.sass-cache/
+# Jekyll cache
+.jekyll-cache
 .jekyll-metadata
+_site
 
+# RubyGems
+*.gem
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-build.sh
+# NPM dependencies
+node_modules
+package-lock.json
 
-.idea/
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist
