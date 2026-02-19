@@ -2,6 +2,7 @@
 // PANEL
 // ------------------------------
 @use "sass:color" as *;
+@use "../variables" as *;
 
 .panel {
   display: table;

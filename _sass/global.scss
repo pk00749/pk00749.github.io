@@ -2,6 +2,7 @@
 // BASICS
 // ------------------------------
 @use "sass:color" as *;
+@use "variables" as *;
 
 html, body {
   height: 100%;

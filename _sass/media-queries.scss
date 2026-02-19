@@ -1,6 +1,8 @@
 // ------------------------------
 // MEDIA QUERIES
 // ------------------------------
+@use "sass:color" as *;
+@use "variables" as *;
 
 @media all and (min-width: 1300px) {
 

@@ -2,6 +2,7 @@
 // POST LIST
 // ------------------------------
 @use "sass:color" as *;
+@use "../variables" as *;
 
 .post-list {
   margin: 0;

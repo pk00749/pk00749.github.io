@@ -1,6 +1,8 @@
 // ------------------------------
 // PAGINATION
 // ------------------------------
+@use "sass:color" as *;
+@use "../variables" as *;
 
 .pagination {
   display: block;

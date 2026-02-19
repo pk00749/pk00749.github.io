@@ -2,6 +2,7 @@
 // BUTTONS
 // ------------------------------
 @use "sass:color" as *;
+@use "../variables" as *;
 
 .btn {
   padding: 10px 20px;
