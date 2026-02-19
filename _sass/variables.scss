@@ -1,6 +1,6 @@
 
 @use "sass:math";
-@use "sass:color";
+@use "sass:color" as color;
 
 $gray-lightest:     #F8F8F8;
 $gray-lighter:      #EEEEEE;
@@ -22,8 +22,8 @@ $primary-color:     $catred;
 $secondary-color:   #5BA4E5;
 
 $link-color:        $primary-color;
-$hover-color:       sass:color.adjust($link-color, $lightness: -15%);
-$body-color:        sass:color.adjust($gray-darker, $lightness: -15%);
+$hover-color:       color.adjust($link-color, $lightness: -15%);
+$body-color:        color.adjust($gray-darker, $lightness: -15%);
 
 $sans-font:         "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 $serif-font:        "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;

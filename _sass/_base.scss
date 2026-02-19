@@ -1,7 +1,7 @@
 /**
  * Reset some basic elements
  */
-@use "sass:color";
+@use "sass:color" as color;
 @use "variables" as *;
 
 body, h1, h2, h3, h4, h5, h6,
@@ -98,7 +98,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: sass:color.adjust($brand-color, $lightness: -15%);
+        color: color.adjust($brand-color, $lightness: -15%);
     }
 
     &:hover {

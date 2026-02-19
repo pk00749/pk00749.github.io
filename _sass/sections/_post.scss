@@ -1,7 +1,7 @@
 // ------------------------------
 // SINGLE POST LAYOUT
 // ------------------------------
-@use "sass:color";
+@use "sass:color" as color;
 @use "../variables" as *;
 
 .post-comments {
@@ -15,7 +15,7 @@
 
 .post-meta {
   margin: 0 0 .4em 0;
-  color: sass:color.adjust($gray, $lightness: -2%);
+  color: color.adjust($gray, $lightness: -2%);
 }
 
   .post-meta__date {

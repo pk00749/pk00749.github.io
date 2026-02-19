@@ -1,7 +1,7 @@
 // ------------------------------
 // PANEL
 // ------------------------------
-@use "sass:color";
+@use "sass:color" as color;
 @use "../variables" as *;
 
 .panel {
@@ -138,27 +138,27 @@
 // ------------------------------
 
 .cover-blue {
-  @include linear-gradient(140deg, rgba($blue,.6) 20%, rgba(sass:color.adjust($blue, $lightness: -20%),.8));
+  @include linear-gradient(140deg, rgba($blue,.6) 20%, rgba(color.adjust($blue, $lightness: -20%),.8));
 }
 
 .cover-green {
-  @include linear-gradient(140deg, rgba($green,.6) 20%, rgba(sass:color.adjust($green, $lightness: -20%),.8));
+  @include linear-gradient(140deg, rgba($green,.6) 20%, rgba(color.adjust($green, $lightness: -20%),.8));
 }
 
 .cover-purple {
-  @include linear-gradient(140deg, rgba($purple,.6) 20%, rgba(sass:color.adjust($purple, $lightness: -20%),.8));
+  @include linear-gradient(140deg, rgba($purple,.6) 20%, rgba(color.adjust($purple, $lightness: -20%),.8));
 }
 
 .cover-red {
-  @include linear-gradient(140deg, rgba(sass:color.adjust($red, $lightness: -30%),.6) 20%, rgba(sass:color.adjust($red, $lightness: -50%),.8));
+  @include linear-gradient(140deg, rgba(color.adjust($red, $lightness: -30%),.6) 20%, rgba(color.adjust($red, $lightness: -50%),.8));
 }
 
 .cover-orange {
-  @include linear-gradient(140deg, rgba(sass:color.adjust($orange, $lightness: -30%),.6) 20%, rgba(sass:color.adjust($orange, $lightness: -50%),.8));
+  @include linear-gradient(140deg, rgba(color.adjust($orange, $lightness: -30%),.6) 20%, rgba(color.adjust($orange, $lightness: -50%),.8));
 }
 
 .cover-slate {
-  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(sass:color.adjust($slate, $lightness: -20%),.8));
+  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(color.adjust($slate, $lightness: -20%),.8));
 }
 
 .cover-disabled {

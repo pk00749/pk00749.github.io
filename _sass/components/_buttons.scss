@@ -1,7 +1,7 @@
 // ------------------------------
 // BUTTONS
 // ------------------------------
-@use "sass:color";
+@use "sass:color" as color;
 @use "../variables" as *;
 
 .btn {
@@ -16,8 +16,8 @@
   -webkit-font-smoothing: antialiased;
 
   &:hover {
-    color: sass:color.adjust($primary-color, $lightness: -15%);
-    border-color: sass:color.adjust($primary-color, $lightness: -15%);
+    color: color.adjust($primary-color, $lightness: -15%);
+    border-color: color.adjust($primary-color, $lightness: -15%);
   }
 
 }
@@ -35,8 +35,8 @@
   color: $secondary-color;
 
   &:hover {
-    color: sass:color.adjust($secondary-color, $lightness: -15%);
-    border-color: sass:color.adjust($secondary-color, $lightness: -15%);
+    color: color.adjust($secondary-color, $lightness: -15%);
+    border-color: color.adjust($secondary-color, $lightness: -15%);
   }
 
 }
@@ -46,8 +46,8 @@
   color: $gray-dark;
 
   &:hover {
-    color: sass:color.adjust($gray-dark, $lightness: -15%);
-    border-color: sass:color.adjust($gray-dark, $lightness: -15%);
+    color: color.adjust($gray-dark, $lightness: -15%);
+    border-color: color.adjust($gray-dark, $lightness: -15%);
   }
 
 }
