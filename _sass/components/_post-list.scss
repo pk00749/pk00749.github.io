@@ -1,7 +1,7 @@
 // ------------------------------
 // POST LIST
 // ------------------------------
-@use "sass:color" as *;
+@use "sass:color";
 @use "../variables" as *;
 
 .post-list {
@@ -46,12 +46,12 @@
     display: block;
     margin: .7em 0 0 0;
     font-size: .9em;
-    color: color.adjust($gray, $lightness: -2%);
+    color: sass:color.adjust($gray, $lightness: -2%);
   }
 
     .post-list__meta--date {
       margin-right: .5em;
-      color: color.adjust($gray, $lightness: -2%);
+      color: sass:color.adjust($gray, $lightness: -2%);
     }
 
     .post-list__meta--tags {

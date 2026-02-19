@@ -1,7 +1,7 @@
 // ------------------------------
 // BASICS
 // ------------------------------
-@use "sass:color" as *;
+@use "sass:color";
 @use "variables" as *;
 
 html, body {
@@ -22,11 +22,11 @@ body {
 }
 
 ::selection {
-  background: color.adjust($primary-color, $lightness: 36%);
+  background: sass:color.adjust($primary-color, $lightness: 36%);
 }
 
 ::-moz-selection {
-  background: color.adjust($primary-color, $lightness: 36%);
+  background: sass:color.adjust($primary-color, $lightness: 36%);
 }
 
 // ------------------------------
@@ -152,8 +152,8 @@ ul {
 
 code {
   padding: .1em .4em;
-  background: color.adjust($secondary-color, $lightness: 32%);
-  border: 1px solid color.adjust($secondary-color, $lightness: 25%);
+  background: sass:color.adjust($secondary-color, $lightness: 32%);
+  border: 1px solid sass:color.adjust($secondary-color, $lightness: 25%);
   border-radius: $border-radius;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: .9em;
@@ -164,8 +164,8 @@ code {
 pre {
   margin-bottom: 1.3em;
   padding: 1em 2.5%;
-  background: color.adjust($secondary-color, $lightness: 32%);
-  border: 1px solid color.adjust($secondary-color, $lightness: 25%);
+  background: sass:color.adjust($secondary-color, $lightness: 32%);
+  border: 1px solid sass:color.adjust($secondary-color, $lightness: 25%);
   border-radius: $border-radius;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: .9em;
@@ -188,13 +188,13 @@ table {
   text-align: center;
   line-height: 40px;
   border-spacing: 0;
-  border: 2px solid color.adjust($primary-color, $lightness: -10%);
+  border: 2px solid sass:color.adjust($primary-color, $lightness: -10%);
   width: 90%;
   margin: 50px auto;
 }
 
 thead tr:first-child {
-  background-color: color.adjust($primary-color, $lightness: -10%);
+  background-color: sass:color.adjust($primary-color, $lightness: -10%);
   color: $gray-lightest;
   border: none;
 }
@@ -222,7 +222,7 @@ td:last-child {
 .author,
 .tags {
   font-size: .8em;
-  color: color.adjust($gray, $lightness: -2%);
+  color: sass:color.adjust($gray, $lightness: -2%);
 
   a {
     color: $gray-darker;
@@ -297,7 +297,7 @@ td:last-child {
   padding: 2em 0 0 0;
   border-top: 2px solid $gray-light;
   font-size: .7em;
-  color: color.adjust($gray-dark, $lightness: 10%);
+  color: sass:color.adjust($gray-dark, $lightness: 10%);
 }
 
   .footer__copyright {
@@ -305,7 +305,7 @@ td:last-child {
     margin-bottom: .7em;
 
     a {
-      color: color.adjust($gray-dark, $lightness: 5%);
+      color: sass:color.adjust($gray-dark, $lightness: 5%);
       text-decoration: underline;
 
       &:hover {
