@@ -1,0 +1,23 @@
+current directory: /Users/yorkhxli/git/pk00749.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/yorkhxli/git/pk00749.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260220-64380-mpmga4 sitelibdir\=./.gem.20260220-64380-mpmga4 clean
+
+current directory: /Users/yorkhxli/git/pk00749.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260220-64380-mpmga4 sitelibdir\=./.gem.20260220-64380-mpmga4
+compiling ruby_http_parser.c
+ruby_http_parser.c:373:17: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'long' [-Wsign-compare]
+  373 |     if (nparsed < len)
+      |         ~~~~~~~ ^ ~~~
+1 warning generated.
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+current directory: /Users/yorkhxli/git/pk00749.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260220-64380-mpmga4 sitelibdir\=./.gem.20260220-64380-mpmga4 install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20260220-64380-mpmga4
+
+current directory: /Users/yorkhxli/git/pk00749.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260220-64380-mpmga4 sitelibdir\=./.gem.20260220-64380-mpmga4 clean

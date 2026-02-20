@@ -10,6 +10,11 @@ description: It's time to SHOW ME
 
 permalink: /:year/:month/:title/
 
+# Sass
+sass:
+  sass_dir: _sass
+  style: :compressed
+
 # Format
 highlighter: rouge
 

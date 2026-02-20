@@ -27,7 +27,7 @@ input[type="tel"] {
     border-color: $secondary-color;
   }
 
-  @include placeholder {
+  &::placeholder {
     color: $gray;
   }
 

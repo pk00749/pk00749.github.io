@@ -57,7 +57,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    @include linear-gradient(140deg, rgba(#444444,.6) 20%, rgba(#000000,.9));
+    background: linear-gradient(140deg, rgba(#444444,.6) 20%, rgba(#000000,.9));
   }
 
   .panel-cover__logo {
@@ -136,27 +136,27 @@
 // ------------------------------
 
 .cover-blue {
-  @include linear-gradient(140deg, rgba($blue,.6) 20%, rgba(darken($blue, 20%),.8));
+  background: linear-gradient(140deg, rgba($blue,.6) 20%, rgba(darken($blue, 20%),.8));
 }
 
 .cover-green {
-  @include linear-gradient(140deg, rgba($green,.6) 20%, rgba(darken($green, 20%),.8));
+  background: linear-gradient(140deg, rgba($green,.6) 20%, rgba(darken($green, 20%),.8));
 }
 
 .cover-purple {
-  @include linear-gradient(140deg, rgba($purple,.6) 20%, rgba(darken($purple, 20%),.8));
+  background: linear-gradient(140deg, rgba($purple,.6) 20%, rgba(darken($purple, 20%),.8));
 }
 
 .cover-red {
-  @include linear-gradient(140deg, rgba(darken($red, 30%),.6) 20%, rgba(darken($red, 50%),.8));
+  background: linear-gradient(140deg, rgba(darken($red, 30%),.6) 20%, rgba(darken($red, 50%),.8));
 }
 
 .cover-orange {
-  @include linear-gradient(140deg, rgba(darken($orange, 30%),.6) 20%, rgba(darken($orange, 50%),.8));
+  background: linear-gradient(140deg, rgba(darken($orange, 30%),.6) 20%, rgba(darken($orange, 50%),.8));
 }
 
 .cover-slate {
-  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));
+  background: linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));
 }
 
 .cover-disabled {
