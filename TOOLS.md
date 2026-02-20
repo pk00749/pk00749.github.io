@@ -37,4 +37,12 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+### 微信公众号
+
+- app_id: 你的公众号AppID
+- app_secret: 你的公众号AppSecret
+- 配置方式：设置环境变量 `WECHAT_APP_ID` 和 `WECHAT_APP_SECRET`，或创建 `~/.wechat_mp_config` 文件
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
