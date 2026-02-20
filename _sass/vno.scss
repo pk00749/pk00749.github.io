@@ -1,47 +1,18 @@
-@import 'bourbon/bourbon';
+@use 'reset.scss' as *;
+@use 'grid.scss' as *;
+@use 'variables.scss' as *;
 
-// ------------------------------
-// THE BASICS
-// ------------------------------
+@use 'global.scss' as *;
 
-@import 'reset.scss';
-@import 'grid.scss';
-@import 'variables.scss';
+@use 'sections/post.scss' as *;
 
-// ------------------------------
-// GLOBAL STYLES
-// ------------------------------
+@use 'components/panels.scss' as *;
+@use 'components/buttons.scss' as *;
+@use 'components/navigation.scss' as *;
+@use 'components/pagination.scss' as *;
+@use 'components/icons.scss' as *;
+@use 'components/post-list.scss' as *;
+@use 'components/forms.scss' as *;
+@use 'components/read-more.scss' as *;
 
-@import 'global.scss';
-
-// ------------------------------
-// SECTIONS
-// ------------------------------
-
-@import 'sections/post.scss';
-
-// ------------------------------
-// COMPONENTS
-// ------------------------------
-
-@import 'components/panels.scss';
-@import 'components/buttons.scss';
-@import 'components/navigation.scss';
-@import 'components/pagination.scss';
-@import 'components/icons.scss';
-@import 'components/post-list.scss';
-@import 'components/forms.scss';
-@import 'components/read-more.scss';
-
-// ------------------------------
-// MEDIA QUERIES
-// ------------------------------
-
-@import 'media-queries.scss';
-
-// ------------------------------
-// EXTRAS
-// ------------------------------
-
-@import 'animate.css';
-@import 'tomorrow.css';
+@use 'media-queries.scss' as *;
