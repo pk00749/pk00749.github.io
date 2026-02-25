@@ -4,6 +4,14 @@
     "tushare-finance": {
       "version": "2.0.6",
       "installedAt": 1771650258328
+    },
+    "toutiao-news-trends": {
+      "version": "0.1.0",
+      "installedAt": 1771910881135
+    },
+    "qwen-image": {
+      "version": "1.0.0",
+      "installedAt": 1771940164553
     }
   }
 }
