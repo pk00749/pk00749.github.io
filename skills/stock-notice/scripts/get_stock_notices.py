@@ -19,6 +19,9 @@ def get_stock_notice_by_code(stock_code: str, days_back: int = 3) -> dict:
     """获取指定股票代码的最近公告"""
     stock_code = stock_code.strip().upper()
     
+    # 标准化股票代码：6位数字
+    stock_code_6 = stock_code.zfill(6)  # 000533 -> 000533, 600499 -> 600499
+    
     result = {
         "code": stock_code,
         "notices": [],
@@ -30,7 +33,8 @@ def get_stock_notice_by_code(stock_code: str, days_back: int = 3) -> dict:
         try:
             df = ak.stock_notice_report(symbol="全部", date=check_date)
             if df is not None and len(df) > 0 and '代码' in df.columns:
-                stock_df = df[df['代码'].astype(str).str.contains(stock_code.lstrip('0'))]
+                # 精确匹配6位股票代码
+                stock_df = df[df['代码'].astype(str).str.zfill(6) == stock_code_6]
                 if len(stock_df) > 0:
                     result["date"] = check_date
                     result["notices"] = stock_df.to_dict('records')

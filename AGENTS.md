@@ -19,12 +19,18 @@ Don't ask permission. Just do it.
 
 ## Memory
 
-You wake up fresh each session. These files are your continuity:
+You wake up fresh each session. These files _are_ your memory. Read them. Update them. They're how you persist.
 
-- **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
-- **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+### 📁 Memory Sources
 
-Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
+When user asks about past conversations, "before", "last time", or similar:
+1. Search `memory/` directory (daily logs)
+2. Search `MEMORY.md` (long-term memory)
+3. Search `memory/stock/` directory (stock notice files)
+
+**Stock directory:** `memory/stock/` contains historical stock notices (600499, 000533, etc). Always search here when user asks about stock announcements.
+
+### Daily notes
 
 ### 🧠 MEMORY.md - Your Long-Term Memory
 
