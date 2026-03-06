@@ -12,6 +12,10 @@
     "qwen-image": {
       "version": "1.0.0",
       "installedAt": 1771940164553
+    },
+    "openclaw-tavily-search": {
+      "version": "0.1.0",
+      "installedAt": 1772775543687
     }
   }
 }
