@@ -45,4 +45,12 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+### Self-Improvement Skill
+
+- 位置：`/home/ubuntu/.openclaw/workspace/skills/self-improving-agent`
+- 日志目录：`/home/ubuntu/.openclaw/workspace/.learnings/`
+- 使用：每次被纠正或遇到错误时，记录到对应的 .md 文件
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.

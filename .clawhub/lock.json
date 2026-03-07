@@ -16,6 +16,10 @@
     "openclaw-tavily-search": {
       "version": "0.1.0",
       "installedAt": 1772775543687
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1772889549332
     }
   }
 }
