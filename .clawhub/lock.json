@@ -32,6 +32,10 @@
     "superdesigndev": {
       "version": "1.0.0",
       "installedAt": 1774111208492
+    },
+    "humanizer-zh": {
+      "version": "1.0.0",
+      "installedAt": 1775795300842
     }
   }
 }
