@@ -100,14 +100,19 @@
 
 ```
 data/
-├── conflicts/
+├── ukraine/                     # 俄乌冲突
 │   ├── ukraine-2026-01.jsonl    # 俄乌冲突 2026 年 1 月
 │   ├── ukraine-2026-02.jsonl
 │   ├── ukraine-2026-03.jsonl
 │   └── ukraine-2026-04.jsonl
-├── middle-east-2026-04.jsonl   # 中东冲突
+├── middle-east/                     # 中东冲突
+│   ├── middle-east-2026-01.jsonl    # 中东冲突 2026 年 1 月
+│   ├── middle-east-2026-02.jsonl
+│   ├── middle-east-2026-03.jsonl
+│   └── middle-east-2026-04.jsonl
 ├── stats/
-│   ├── ukraine-daily.jsonl      # 每日统计汇总
+│   ├── ukraine-daily.jsonl      # 俄乌每日统计汇总
+│   ├── middle-east-daily.jsonl  # 中东每日统计汇总
 │   └── global-weekly.jsonl      # 全球每周概览
 └── sources/
     └── source-index.jsonl       # 数据来源索引

@@ -36,6 +36,10 @@
     "humanizer-zh": {
       "version": "1.0.0",
       "installedAt": 1775795300842
+    },
+    "vercel": {
+      "version": "1.0.1",
+      "installedAt": 1776097034819
     }
   }
 }
