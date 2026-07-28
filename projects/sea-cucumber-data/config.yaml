@@ -1,0 +1,90 @@
+# 海参行业数据收集平台 - 配置文件
+
+# 数据库
+database:
+  type: sqlite
+  path: db/sea_cucumber.db
+
+# 通知渠道（飞书webhook）
+notifier:
+  enabled: false
+  webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/YOUR_WEBHOOK_ID"
+
+# 数据源配置
+sources:
+  fishery_stats:
+    base_url: "https://yyj.moa.gov.cn/gzdt"
+    enabled: true
+    schedule: "0 9 15 7 *"  # 每年7月15日
+
+  customs:
+    base_url: "http://stats.customs.gov.cn"
+    enabled: true
+    schedule: "0 9 5 1 *"   # 每年1月5日
+    hs_codes:
+      - "0308"              # 海参
+
+  price:
+    enabled: true
+    schedule: "0 9 15 3,6,9,12 *"  # 每季度末15日
+    sites:
+      - name: "食品伙伴网"
+        url: "https://www.foodmate.net"
+
+  fao:
+    enabled: false
+    schedule: "0 9 1 10 *"  # 每年10月1日
+    api_url: "https://fisheryandaquaculture.shinyapps.io/fishstatj/_w_9487b4b3/tile/FISHSTATJ"
+
+# 反爬虫配置
+anti_bot:
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+  request_interval_sec: 5
+  retry_times: 3
+  timeout_sec: 30
+
+# 预测模型配置
+prediction:
+  output_model: "arima"        # arima / linear_regression
+  price_model: "regression"    # regression / seasonal_avg
+  confidence_level: 0.8        # 置信区间
+  min_history_years: 5         # 最少历史数据年数
+
+# 天气数据配置
+weather:
+  enabled: true
+  schedule: "0 9 1 6,9,12 *"  # 每季度初采集天气数据
+  sources:
+    noaa_sst:
+      enabled: true
+      api_url: "https://www.ncei.noaa.gov/access/services/data/v1"
+      stations:
+        - name: "大连"
+          lat: 38.9
+          lon: -121.6
+        - name: "青岛"
+          lat: 36.1
+          lon: -120.4
+        - name: "霞浦"
+          lat: 26.9
+          lon: -120.0
+    typhoon:
+      enabled: true
+      base_url: "https://typhoon.weather.com.cn"
+    red_tide:
+      enabled: true
+      base_url: "https://www.mnr.gov.cn"
+
+# 天气告警阈值
+alert_thresholds:
+  water_temp_high: 30          # 水温超过30℃告警
+  typhoon_severe: "severe"     # 台风严重级别告警
+  red_tide_area_km2: 1000      # 赤潮面积超过1000km2告警
+
+# 本地存储
+storage:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  backup_enabled: true
